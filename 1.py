@@ -13,6 +13,23 @@
 
 
 
+#==================自定义配置都写最上面:
+
+
+color_and_biaoqian=[
+    ['white','标注为空'],
+    ['red','人名'],
+    ['yellow','地名'],
+    ['Blue','机构'],
+    ['Cyan','电话'],
+    ['Cyan','电话'],
+
+
+
+
+
+]
+
 
 
 
@@ -25,7 +42,7 @@ root = Tk()
 text = Text(root, width=100,height=20,font=('宋体',15),wrap = 'none')
 text.insert('1.0', '贴入你要处理的文字 中文 English 都行\n贴入你要处理的文字')
 
-
+colorlist=[i[0] for i in color_and_biaoqian]
 
 #====滚动条竖直:
 scroll = tkinter.Scrollbar()
@@ -51,7 +68,7 @@ text.pack()
 #第二层是frame 来放按钮的.
 frame = Frame (root, relief=RAISED, borderwidth=2)
 frame.pack (side=TOP, fill=BOTH, ipadx=5, ipady=5, expand=1)
-colorlist=['white','red','yellow','Blue','Cyan','Lime']
+
 def helloCallBack(color):
    print(1111111111111)
    try:
@@ -69,6 +86,47 @@ def helloCallBack(color):
        # print(11111111111)
    except:
        pass
+
+
+
+import kmp_for_array
+
+def helloCallBack_quanbiaozhu(color):
+   print(1111111111111)
+   if 1:
+       print(SEL_FIRST,SEL_LAST)
+       print(text.index("sel.first"),text.index("sel.last"))
+       text.tag_config(color,  background=color)  # 再为标签进行设置
+       wenben=text.get(text.index("sel.first"),text.index("sel.last"))
+       print("获取到的文本是",wenben)
+       if 1:
+          #=============调用python的搜索
+          all_text=text.get('1.0',END)
+          print(all_text)
+          tmp= all_text.split('\n')
+          out2=[]
+          for i in range(len(tmp)):#=========这里面需要字符串的kmp算法
+              kkk=kmp_for_array.kmp(tmp[i],wenben,return_all=True)
+              if kkk!=-1:
+
+                for j in kkk:
+                    out2.append([f'{i+1}.{j}',f'{i+1}.{j+len(wenben)}' ])
+
+
+              print(out2,999999999999999999)
+
+       for weizhi in out2:
+       #===============注意要先删除其他的标签.
+           for i in colorlist:
+               text.tag_remove( i,weizhi[0], weizhi[1])  # =======变色
+           if color !='white':#======white实际上是不进行背景色标注!这样效果最好!!!!!!a trick
+                text.tag_add(color,weizhi[0], weizhi[1]) #=======变色
+
+           # print(text.tag_ranges(color))
+
+
+       # print(11111111111)
+
 #https://blog.csdn.net/wjciayf/article/details/79261005  颜色表
 # c0='black'
 # c1='red'
@@ -76,20 +134,39 @@ def helloCallBack(color):
 # c3='Blue'
 # c4='Cyan'
 # c5='Lime'
+#=================command 这个函数不能用for实现.改用动态生成.可以避免共享变量.
 
+exec ('''
 b=tkinter.Button(frame, text ="标注为空", command = lambda :helloCallBack(colorlist[0]))
 b.grid(row=0,column=1,padx=10)
+''')
+for i in range(len(color_and_biaoqian)):
+    if i==0:
+        continue
 
-b=tkinter.Button(frame, text ="标注1", command = lambda :helloCallBack(colorlist[1]))
-b.grid(row=0,column=2,padx=10)
-b=tkinter.Button(frame, text ="标注2", command = lambda :helloCallBack(colorlist[2]))
-b.grid(row=0,column=3,padx=10)
-b=tkinter.Button(frame, text ="标注3", command = lambda :helloCallBack(colorlist[3]))
-b.grid(row=0,column=4,padx=10)
-b=tkinter.Button(frame, text ="标注4", command = lambda :helloCallBack(colorlist[4]))
-b.grid(row=0,column=5,padx=10)
-b=tkinter.Button(frame, text ="标注5", command = lambda :helloCallBack(colorlist[5]))
-b.grid(row=0,column=6,padx=10)
+    exec (f'''
+b=tkinter.Button(frame, text =color_and_biaoqian[{i}][1], command = lambda :helloCallBack(color_and_biaoqian[{i}][0]))
+b.grid(row=0,column=({i}+1),padx=10)
+    ''')
+#================下面一排是全标注===全文有这个词的直接全标注上.
+    exec(f'''
+b=tkinter.Button(frame, text =color_and_biaoqian[{i}][1]+'全标注', command = lambda :helloCallBack_quanbiaozhu(color_and_biaoqian[{i}][0]))
+b.grid(row=1,column=({i}+1),padx=10)
+        ''')
+
+
+
+#
+# b=tkinter.Button(frame, text ="标注1", command = lambda :helloCallBack(colorlist[1]))
+# b.grid(row=0,column=2,padx=10)
+# b=tkinter.Button(frame, text ="标注2", command = lambda :helloCallBack(colorlist[2]))
+# b.grid(row=0,column=3,padx=10)
+# b=tkinter.Button(frame, text ="标注3", command = lambda :helloCallBack(colorlist[3]))
+# b.grid(row=0,column=4,padx=10)
+# b=tkinter.Button(frame, text ="标注4", command = lambda :helloCallBack(colorlist[4]))
+# b.grid(row=0,column=5,padx=10)
+# b=tkinter.Button(frame, text ="标注5", command = lambda :helloCallBack(colorlist[5]))
+# b.grid(row=0,column=6,padx=10)
 
 
 
@@ -142,7 +219,7 @@ def save():
 
 
 b=tkinter.Button(frame, text ="保存文件为BIO", command = save)
-b.grid(row=0,column=7,padx=10)
+b.grid(row=0,column=len(color_and_biaoqian)+1,padx=10)
 
 
 
