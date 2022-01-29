@@ -70,12 +70,12 @@ def helloCallBack(color):
    except:
        pass
 #https://blog.csdn.net/wjciayf/article/details/79261005  颜色表
-c0='black'
-c1='red'
-c2='yellow'
-c3='Blue'
-c4='Cyan'
-c5='Lime'
+# c0='black'
+# c1='red'
+# c2='yellow'
+# c3='Blue'
+# c4='Cyan'
+# c5='Lime'
 
 b=tkinter.Button(frame, text ="标注为空", command = lambda :helloCallBack(colorlist[0]))
 b.grid(row=0,column=1,padx=10)
