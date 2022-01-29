@@ -108,9 +108,12 @@ def helloCallBack_quanbiaozhu(color):
           for i in range(len(tmp)):#=========这里面需要字符串的kmp算法
               kkk=kmp_for_array.kmp(tmp[i],wenben,return_all=True)
               if kkk!=-1:
-
+                #================一个bug, 比如 aaa 然后我要把aa标注为红色.那么就会图2次.所以这里面我们强制让他只图最前面的aa,后的aa忽略#==============3.0版本修复了这个bug
+                last_tail=0
                 for j in kkk:
-                    out2.append([f'{i+1}.{j}',f'{i+1}.{j+len(wenben)}' ])
+                    if j>=last_tail:
+                        out2.append([f'{i+1}.{j}',f'{i+1}.{j+len(wenben)}' ])
+                        last_tail=j+len(wenben)
 
 
               print(out2,999999999999999999)

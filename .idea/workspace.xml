@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2c658a5-b92a-4f39-9868-d73fecc1f563" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kmp_for_array.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.bio" beforeDir="false" afterPath="$PROJECT_DIR$/output.bio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +15,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="24JlVkxw65JBejePqP8X8q6tKO9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -97,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643356595343</updated>
       <workItem from="1643356597876" duration="1789000" />
-      <workItem from="1643381121851" duration="15561000" />
+      <workItem from="1643381121851" duration="16921000" />
     </task>
     <servers />
   </component>
@@ -117,22 +117,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="971" height="466" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1643447269123" />
-    <state width="1237" height="113" key="GridCell.Tab.0.bottom" timestamp="1643447680969">
+    <state width="1237" height="113" key="GridCell.Tab.0.bottom" timestamp="1643448833143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="113" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1643447680969" />
-    <state width="1237" height="113" key="GridCell.Tab.0.center" timestamp="1643447680969">
+    <state width="1237" height="113" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1643448833143" />
+    <state width="1237" height="113" key="GridCell.Tab.0.center" timestamp="1643448833143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="113" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1643447680969" />
-    <state width="1237" height="113" key="GridCell.Tab.0.left" timestamp="1643447680968">
+    <state width="1237" height="113" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1643448833143" />
+    <state width="1237" height="113" key="GridCell.Tab.0.left" timestamp="1643448833143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="113" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1643447680968" />
-    <state width="1237" height="113" key="GridCell.Tab.0.right" timestamp="1643447680969">
+    <state width="1237" height="113" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1643448833143" />
+    <state width="1237" height="113" key="GridCell.Tab.0.right" timestamp="1643448833143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="113" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1643447680969" />
+    <state width="1237" height="113" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1643448833143" />
     <state width="1237" height="149" key="GridCell.Tab.1.bottom" timestamp="1643447383980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -176,6 +176,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bio$kmp_for_array.coverage" NAME="kmp_for_array Coverage Results" MODIFIED="1643445840152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bio$1.coverage" NAME="1 Coverage Results" MODIFIED="1643447521327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bio$1.coverage" NAME="1 Coverage Results" MODIFIED="1643448833136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
